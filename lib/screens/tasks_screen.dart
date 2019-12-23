@@ -15,7 +15,7 @@ class _TasksScreenState extends State<TasksScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(10.0),
         child: FloatingActionButton(
           backgroundColor: Colors.amber,
           child: Icon(
@@ -28,11 +28,6 @@ class _TasksScreenState extends State<TasksScreen> {
               context: context,
               builder: (context) => AddTaskScreen(
                 addTaskCallback: (newTaskTitle) {
-//                  setState(
-//                    () {
-//                      tasks.add(Task(name: newTaskTitle));
-//                    },
-//                  );
                   Navigator.pop(context);
                 },
               ),
@@ -72,18 +67,29 @@ class _TasksScreenState extends State<TasksScreen> {
             ),
           ),
           Expanded(
+//            flex: 6,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
               child: TasksList(),
             ),
-          )
+          ),
+          SizedBox(
+            height: 100,
+          ),
+//          Expanded(
+//            child: Container(
+//                padding: EdgeInsets.symmetric(horizontal: 20),
+//                decoration: BoxDecoration(
+//                  color: Colors.white,
+//                  borderRadius: BorderRadius.all(
+//                    Radius.circular(20),
+//                  ),
+//                )),
+//          ),
         ],
       ),
     );

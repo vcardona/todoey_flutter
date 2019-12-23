@@ -13,14 +13,15 @@ class _TasksScreenState extends State<TasksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Colors.black,
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(20.0),
         child: FloatingActionButton(
-          backgroundColor: Colors.lightBlueAccent,
+          backgroundColor: Colors.amber,
           child: Icon(
             Icons.add,
             size: 40,
+            color: Colors.black,
           ),
           onPressed: () {
             showModalBottomSheet(
@@ -49,27 +50,18 @@ class _TasksScreenState extends State<TasksScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  CircleAvatar(
-                    child: Icon(
-                      Icons.list,
-                      size: 30,
-                      color: Colors.lightBlueAccent,
-                    ),
-                    backgroundColor: Colors.white,
-                    radius: 30,
-                  ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
-                    'Todoey',
+                    'Tareas',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 50.0,
+                        fontSize: 60.0,
                         fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    "${Provider.of<TaskData>(context).taskCount} Tasks",
+                    "Por hacer ${Provider.of<TaskData>(context).taskCount} ",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,

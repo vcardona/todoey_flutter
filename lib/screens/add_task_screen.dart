@@ -30,13 +30,22 @@ class AddTaskScreen extends StatelessWidget {
               "Add Task",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 30,
-                color: Colors.lightBlueAccent,
+                fontSize: 25,
+                color: Colors.black,
               ),
             ),
             TextField(
               autofocus: true,
+              cursorColor: Colors.black,
               textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black),
+                ),
+              ),
+              style: TextStyle(
+                color: Colors.black,
+              ),
               onChanged: (newText) {
                 newTaskTitle = newText;
               },
@@ -48,9 +57,11 @@ class AddTaskScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              color: Colors.lightBlueAccent,
+              color: Colors.black,
               onPressed: () {
-                Provider.of<TaskData>(context).addTask(newTaskTitle);
+                newTaskTitle != null
+                    ? Provider.of<TaskData>(context).addTask(newTaskTitle)
+                    : newTaskTitle = "";
                 Navigator.pop(context);
               },
             ),

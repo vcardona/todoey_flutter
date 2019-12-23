@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todoey_flutter/another_float_button.dart';
 import 'package:todoey_flutter/models/task_data.dart';
 import 'package:todoey_flutter/screens/add_task_screen.dart';
 import 'package:todoey_flutter/widgets/tasks_list.dart';
@@ -16,13 +17,7 @@ class _TasksScreenState extends State<TasksScreen> {
       backgroundColor: Colors.black,
       floatingActionButton: Padding(
         padding: EdgeInsets.all(10.0),
-        child: FloatingActionButton(
-          backgroundColor: Colors.amber,
-          child: Icon(
-            Icons.add,
-            size: 40,
-            color: Colors.black,
-          ),
+        child: AnotherFloatButton(
           onPressed: () {
             showModalBottomSheet(
               context: context,
@@ -53,7 +48,7 @@ class _TasksScreenState extends State<TasksScreen> {
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 60.0,
-                        fontWeight: FontWeight.w700),
+                        fontWeight: FontWeight.w800),
                   ),
                   Text(
                     "Por hacer ${Provider.of<TaskData>(context).taskCount} ",
